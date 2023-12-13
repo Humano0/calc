@@ -1,0 +1,83 @@
+:root {
+  --main-background-color: #18122B;
+  --wrapper-background-color: #393053;
+  --button-background-color: #443c68;
+  --button-text-font-size: 2rem;
+  --button-text-color: rgb(205, 205, 205);
+  --operators-background-color: rgb(197, 128, 0);
+  --operators-hover-background-color: rgba(197, 128, 0, 0.8);
+  --operators-text-color: rgb(255, 255, 255);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--main-background-color);
+}
+
+.App {
+  background-color: var(--wrapper-background-color);
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  justify-content: center;
+  width: 30vw;
+  height: 60vh;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1vh;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.App > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--button-text-font-size);
+  transition: background-color 0.3s ease;
+  border: 1px solid black;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.App > div:active {
+  background-color: rgba(var(--main-background-color), 0.8);
+}
+.App > div:not(.operators) {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+}
+.App > div:not(:first-child) {
+  user-select: none;
+}
+.App > div:not(:first-child):not(.operators):hover {
+  background-color: rgba(var(--button-background-color), 0.8);
+}
+
+.operators {
+  background-color: var(--operators-background-color);
+  color: var(--operators-text-color);
+}
+.operators:hover {
+  background-color: var(--operators-hover-background-color);
+}
+
+.App > div:first-child {
+  grid-column: span 5;
+}
+
+.App .zerodiv,
+.App .enter {
+  grid-column: span 2;
+}
+
