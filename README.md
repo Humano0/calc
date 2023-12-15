@@ -11,7 +11,7 @@
 2. Install dependencies:
 
     ```bash
-    npm install
+    npm i dependencies
     ```
 
 3. Run the development server:
@@ -31,7 +31,7 @@
 2. Install dependencies:
 
     ```bash
-    npm install
+    npm i dependencies
     ```
 
 3. Run the backend server:
