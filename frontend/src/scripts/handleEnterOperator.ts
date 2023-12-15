@@ -1,4 +1,4 @@
-async function handleEnterOperator(setOpExists: any) {
+async function handleEnterOperator(setOpExists: any, extraOperator?: any) {
     const board = document.querySelector('.board')!;
 	setOpExists('');
     try {
@@ -15,9 +15,17 @@ async function handleEnterOperator(setOpExists: any) {
 			if(response.ok) {
 				const data = await response.json();
 				board.innerHTML = data.result;
+				if(extraOperator) {
+					board.innerHTML += extraOperator;
+					setOpExists(extraOperator);
+				}
+			} else if(response.status === 400) {
+				const errorData = await response.json();
+				alert(errorData.error);
+				board.innerHTML = '';
 			}
 	} catch (e) {
-		console.log("error occurred when doing the post req.");
+		console.log(e);
 	}
 }
 

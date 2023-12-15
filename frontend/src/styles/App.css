@@ -18,6 +18,13 @@ body {
   background-color: var(--main-background-color);
 }
 
+.header {
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 1vh;
+  color: rgb(248, 234, 255);
+}
+
 .App {
   background-color: var(--wrapper-background-color);
   display: grid;
@@ -50,9 +57,6 @@ body {
   -o-border-radius: 10px;
 }
 
-.App > div:active {
-  background-color: rgba(var(--main-background-color), 0.8);
-}
 .App > div:not(.operators) {
   background-color: var(--button-background-color);
   color: var(--button-text-color);
@@ -74,6 +78,8 @@ body {
 
 .App > div:first-child {
   grid-column: span 5;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .App .zerodiv,
