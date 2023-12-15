@@ -1,4 +1,5 @@
 # Calculator App
+Calculator app using react and express.
 
 ## Frontend
 
