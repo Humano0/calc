@@ -5,7 +5,7 @@ import handleOperatorClick from '../scripts/handleOperatorClick';
 import handleSpecialOperatorClick from '../scripts/handleSpecialOperatorClick';
 import handleResetClick from '../scripts/handleResetClick';
 import handleEnterOperator from '../scripts/handleEnterOperator';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 function CalcDisplay(): JSX.Element {
 	const [opExist, setOpExists] = useState('');
